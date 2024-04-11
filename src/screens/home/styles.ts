@@ -34,3 +34,10 @@ export const Filters = styled.div`
   justify-content: space-between;
   width: 100%;
 `;
+
+export const Balance = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+`;
