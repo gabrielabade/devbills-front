@@ -7,7 +7,9 @@ import { Input } from '../../components/input';
 import { Logo } from '../../components/logo';
 import { Title } from '../../components/title';
 import { InputGroup } from '../../components/title/styles';
+import { Transaction } from '../../components/transaction';
 import {
+  Aside,
   Balance,
   ChartAction,
   ChartContainer,
@@ -15,6 +17,7 @@ import {
   Filters,
   Header,
   Main,
+  SearchTransaction,
   Section,
 } from './styles';
 
@@ -87,6 +90,29 @@ export function Home() {
             <ChartContent></ChartContent>
           </ChartContainer>
         </Section>
+        <Aside>
+          <header>
+            <Title title="Transações" sutitle="Receitas e Gastos no período" />
+            <SearchTransaction>
+              <Input variant="black" placeholder="Procurar transação..." />
+              <ButtonIcon />
+            </SearchTransaction>
+            <Transaction
+              id={1}
+              amount={200000}
+              date="18/04/2019"
+              category={{ title: 'Alimentação', color: '#ff33bb' }}
+              title="Mercado"
+            />
+            <Transaction
+              id={1}
+              amount={200000}
+              date="18/04/2019"
+              category={{ title: 'Alimentação', color: '#ff33bb' }}
+              title="Mercado"
+            />
+          </header>
+        </Aside>
       </Main>
     </>
   );
