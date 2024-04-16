@@ -3,7 +3,7 @@ import { InputMask } from '@react-input/mask';
 import { Button } from '../../components/button';
 import { ButtonIcon } from '../../components/button-icon';
 import { Card } from '../../components/card';
-import { Dialog } from '../../components/dialog';
+import { CreateCategoryDialog } from '../../components/create-category-dialog';
 import { Input } from '../../components/input';
 import { Logo } from '../../components/logo';
 import { Title } from '../../components/title';
@@ -29,14 +29,14 @@ export function Home() {
       <Header>
         <Logo />
         <div>
-          <Dialog trigger={<Button>Nova transação</Button>}>Olá</Dialog>
-          <Button>Nova categoria</Button>
+          <Button>Nova transação</Button>
+          <CreateCategoryDialog />
         </div>
       </Header>
       <Main>
         <Section>
           <Filters>
-            <Title title="saldo" sutitle="Receitas e despesas no período" />
+            <Title title="saldo" subtitle="Receitas e despesas no período" />
             <InputGroup>
               <InputMask
                 component={Input}
@@ -66,7 +66,7 @@ export function Home() {
             <header>
               <Title
                 title="Gastos"
-                sutitle="Despesas por categoria no período"
+                subtitle="Despesas por categoria no período"
               />
             </header>
             <ChartContent></ChartContent>
@@ -75,7 +75,7 @@ export function Home() {
             <header>
               <Title
                 title="Evolução Financeira"
-                sutitle="Saldo, Receitas e Gastos no ano"
+                subtitle="Saldo, Receitas e Gastos no ano"
               />
               <ChartAction>
                 <InputMask
@@ -94,7 +94,7 @@ export function Home() {
         </Section>
         <Aside>
           <header>
-            <Title title="Transações" sutitle="Receitas e Gastos no período" />
+            <Title title="Transações" subtitle="Receitas e Gastos no período" />
             <SearchTransaction>
               <Input variant="black" placeholder="Procurar transação..." />
               <ButtonIcon />
