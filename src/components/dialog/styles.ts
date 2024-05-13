@@ -14,9 +14,9 @@ export const Overlay = styled(Dialog.Overlay)`
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   inset: 0;
-  animation: OverlayShow 150ms;
+  animation: overlayShow 150ms;
 
-  @keyframes OverlayShow {
+  @keyframes overlayShow {
     from {
       opacity: 0;
     }
@@ -25,6 +25,7 @@ export const Overlay = styled(Dialog.Overlay)`
     }
   }
 `;
+
 export const Content = styled(Dialog.Content)`
   background-color: ${theme.colors.dark};
   border-radius: 0.5rem;
