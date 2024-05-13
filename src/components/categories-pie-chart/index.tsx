@@ -1,4 +1,17 @@
-export type ChartData = {
+import { ResponsivePie } from '@nivo/pie';
+import { useMemo } from 'react';
+
+import { Expense } from '../../services/api-types';
+import { theme } from '../../styles/theme';
+import { formatCurrency } from '../../utils/format-currency';
+
+export type CategoryProps = {
+  id: string;
+  title: string;
+  color: string;
+};
+
+type ChartData = {
   id: string;
   label: string;
   externalId: string;
@@ -6,48 +19,40 @@ export type ChartData = {
   color: string;
 };
 
-export const apiData = [
-  {
-    _id: '1',
-    title: 'Alimentação',
-    amount: 30000,
-    color: '#ff33bb',
-  },
-  {
-    _id: '2',
-    title: 'Compras',
-    amount: 15000,
-    color: '#ff0000',
-  },
-  {
-    _id: '3',
-    title: 'Freelancer',
-    amount: 50000,
-    color: '#00ff09',
-  },
-];
+type CategoriesPieChartProps = {
+  onClick: (category: CategoryProps) => void;
+  expenses?: Expense[];
+};
 
-import { ResponsivePie } from '@nivo/pie';
-import { useMemo } from 'react';
-
-import { theme } from '../../styles/theme';
-import { formatCurrency } from '../../utils/format-currency';
-
-export function CategoriesPieChart() {
+export function CategoriesPieChart({
+  onClick,
+  expenses,
+}: CategoriesPieChartProps) {
   const data = useMemo<ChartData[]>(() => {
-    const chartData = apiData.map((item) => ({
-      id: item.title,
-      label: item.title,
-      externalId: item._id,
-      value: item.amount,
-      color: item.color,
-    }));
+    if (expenses?.length) {
+      const chartData: ChartData[] = expenses.map((item) => ({
+        id: item.title,
+        label: item.title,
+        externalId: item._id,
+        value: item.amount,
+        color: item.color,
+      }));
 
-    return chartData;
-  }, []);
+      return chartData;
+    }
+
+    return [];
+  }, [expenses]);
 
   return (
     <ResponsivePie
+      onClick={({ data }) =>
+        onClick({
+          id: data.externalId,
+          title: data.id,
+          color: data.color,
+        })
+      }
       data={data}
       enableArcLabels={false}
       enableArcLinkLabels={false}
