@@ -6,6 +6,7 @@ import {
 
 import { formatCurrency } from '../../utils/format-currency';
 import { Container } from './styles';
+
 type CardProps = {
   variant?: 'balance' | 'incomes' | 'expenses';
   title: string;
