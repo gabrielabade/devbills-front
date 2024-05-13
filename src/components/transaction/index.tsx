@@ -12,6 +12,7 @@ type TransactionProps = {
   };
   variant?: 'income' | 'expense';
 };
+
 export function Transaction({
   id,
   title,
@@ -29,6 +30,7 @@ export function Transaction({
           <span>{date}</span>
         </div>
       </Info>
+
       <Content $variant={variant} $tagColor={category.color}>
         <strong>{formatCurrency(amount)}</strong>
         <span>{category.title.toUpperCase()}</span>
