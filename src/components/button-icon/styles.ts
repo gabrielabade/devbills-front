@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 import { theme } from '../../styles/theme';
 
@@ -17,6 +17,7 @@ export const Container = styled.button`
   &:hover {
     background-color: ${theme.colors.primaryDark};
   }
+
   svg {
     fill: ${theme.colors.black};
     height: 1.25rem;

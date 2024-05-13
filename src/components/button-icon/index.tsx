@@ -14,5 +14,3 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ButtonIconProps>(
     );
   },
 );
-
-export { Container };
