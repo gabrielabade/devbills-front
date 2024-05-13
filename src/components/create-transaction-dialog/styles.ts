@@ -31,7 +31,7 @@ export const Content = styled.div`
 export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.25rem;
 
   > label {
     color: ${theme.colors.white};
@@ -47,7 +47,7 @@ export const InputGroup = styled.div`
     border: 1px solid transparent;
     transform: all 100ms;
 
-    &focus {
+    &:focus {
       border-color: ${theme.colors.primary};
     }
   }
@@ -65,7 +65,7 @@ export const CurrencyInput = styled(InputNumberFormat)`
   border: 1px solid transparent;
   transform: all 100ms;
 
-  &focus {
+  &:focus {
     border-color: ${theme.colors.primary};
   }
 
@@ -95,4 +95,11 @@ export const RadioGroup = styled.div`
     color: ${theme.colors.white};
     font-size: 0.875rem;
   }
+`;
+
+export const ErrorMessage = styled.span`
+  margin-top: 0.125rem;
+  font-size: 0.625rem;
+  line-height: 80%;
+  color: ${theme.colors.error};
 `;
