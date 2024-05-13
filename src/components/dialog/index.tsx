@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Root, Content, Overlay, Portal, Trigger } from './styles';
+import { Overlay, Root, Portal, Content, Trigger } from './styles';
 
 type DialogProps = {
   children: ReactNode;
