@@ -18,10 +18,12 @@
     "@react-input/mask": "^1.1.0",
     "@react-input/number-format": "^1.0.24",
     "axios": "^1.6.8",
+    "boxicons": "^2.1.4",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.4",
+    "react-icons": "^5.2.1",
     "styled-components": "^6.1.8",
     "zod": "^3.22.5"
   },

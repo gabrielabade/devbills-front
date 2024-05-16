@@ -83,3 +83,9 @@ export const Content = styled.div<ContentType>`
     border-radius: 0.125rem;
   }
 `;
+
+export const DeleteButton = styled.button`
+  background: none;
+  border: none;
+  color: ${theme.colors.primary};
+`;

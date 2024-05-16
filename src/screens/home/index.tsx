@@ -17,7 +17,7 @@ import { FinancialEvolutionBarChart } from '../../components/financial-evolution
 import { Input } from '../../components/input';
 import { Logo } from '../../components/logo';
 import { Title } from '../../components/title';
-import { Transaction } from '../../components/transaction';
+import { Transaction } from '../../components/transaction/index';
 import { useFetchAPI } from '../../hooks/useFetchAPI';
 import { transactionsFilterSchema } from '../../validators/schemas';
 import {
@@ -123,6 +123,10 @@ export function Home() {
     },
     [fetchFinancialEvolution],
   );
+
+  const handleDeleteTransaction = async (transactionId: string) => {
+    console.log('Excluindo transação com ID:', transactionId);
+  };
 
   return (
     <>
@@ -264,6 +268,7 @@ export function Home() {
                   }}
                   title={item.title}
                   variant={item.type}
+                  onDelete={() => handleDeleteTransaction(item._id)}
                 />
               ))}
           </TransactionGroup>
